@@ -38,12 +38,19 @@ const galleryRef = document.querySelector('#gallery');
 
 // createListImg.append(list1, list2, list3);
 
-const imagesList = images.map(item => {
 
+const imagesList = images.map(item => {
   const list = document.createElement('li');
-  // list.insertAdjacentHTML('beforeend', '<img src=${item.url} alt=${item.alt} />');
-  list.appendChild(item);
-  // list.append(imageLink);
+  
+  const listItem = document.createElement('img');
+  list.append(listItem);
+  listItem.setAttribute('src', item.url);
+  listItem.setAttribute('alt', item.alt);
+  listItem.classList.add('gallery-item-image');
+  listItem.style.maxWidth = '75%';
+
+  return list;
 });
+
 
 galleryRef.append(...imagesList);
