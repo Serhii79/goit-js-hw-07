@@ -18,6 +18,14 @@ const images = [
 
 const galleryRef = document.querySelector('#gallery');
 
+const getStringTemplate = ({ url, alt }) => `<li>
+<img class="gallery-item-image" src="${url}" alt="${alt}" />
+</li>`;
+
+const makeList = images.map((item) => getStringTemplate(item)).join('');
+
+galleryRef.insertAdjacentHTML("beforeend", makeList);
+
 // const list1 = document.createElement('li');
 // const imageLink1 = document.createElement('img');
 // list1.append(imageLink1);
@@ -39,18 +47,18 @@ const galleryRef = document.querySelector('#gallery');
 // createListImg.append(list1, list2, list3);
 
 
-const imagesList = images.map(item => {
-  const list = document.createElement('li');
+// const imagesList = images.map(item => {
+//   const list = document.createElement('li');
   
-  const listItem = document.createElement('img');
-  list.append(listItem);
-  listItem.setAttribute('src', item.url);
-  listItem.setAttribute('alt', item.alt);
-  listItem.classList.add('gallery-item-image');
-  listItem.style.maxWidth = '75%';
+//   const listItem = document.createElement('img');
+//   list.append(listItem);
+//   listItem.setAttribute('src', item.url);
+//   listItem.setAttribute('alt', item.alt);
+//   listItem.classList.add('gallery-item-image');
+//   listItem.style.maxWidth = '75%';
 
-  return list;
-});
+//   return list;
+// });
 
 
-galleryRef.append(...imagesList);
+// galleryRef.append(...imagesList);

@@ -9,3 +9,7 @@
 #validation-input.invalid {
   border-color: #f44336;
 }
+
+.gallery-item-image {
+  max-width: 75%;
+}
